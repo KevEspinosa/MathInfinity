@@ -16,10 +16,11 @@ const HomeView = ({ navigation }) => {
     return (
         <View style={HomeStyles.HomeContainer}>
             <Header
+                backgroundColor="#fff"
                 placement="center"
                 containerStyle={{marginTop: -20, width: '100%', height: 100}}
                 leftComponent={{ icon: 'menu', color: '#fff', onPress: () => setModalVisible(true), size: 30 }}
-                centerComponent={{ text: 'MathInfinity', style: { color: '#fff', alignItems: 'center', fontSize: 25 } }}
+                centerComponent={{ text: 'MathInfinity', style: { color: '#000', alignItems: 'center', fontSize: 25 } }}
             />
             <View style={HomeStyles.content}>
                 <View style={{paddingBottom: 30}}>

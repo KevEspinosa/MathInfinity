@@ -11,10 +11,10 @@ const ClassicModeView = ({ navigation }) => {
                 <Text style={{fontSize: 40, alignSelf: 'center'}}>
                     El modo clásico
                 </Text>
-                <Text style={{fontSize: 30, textAlign: 'center', paddingTop: 80}}>
+                <Text style={{fontSize: 30, textAlign: 'center', paddingTop: 80, margin: 5}}>
                     No tienes tiempo para contestar cada pregunta, diviértete y aprende cada día más.
                 </Text>
-                <Text style={{fontSize: 30, textAlign: 'center', paddingTop: 10}}>
+                <Text style={{fontSize: 30, textAlign: 'center', paddingTop: 10, margin: 5}}>
                     Es una buena forma de entrenarte para modos más desafiantes.
                 </Text>
             </View>
