@@ -7,6 +7,9 @@ import ModeView from "./src/views/mode/ModeView";
 import LegendModeView from "./src/views/legendMode/StartView/LegendModeView";
 import ClassicModeView from "./src/views/clasicMode/StartView/ClassicModeView";
 import FasterModeView from "./src/views/fasterMode/StartView/FasterModeView";
+import ScoresView from "./src/views/scores/ScoresView";
+import ScoreLegendView from "./src/views/legendMode/ScoreLegend/ScoreLegendView";
+import ScoreFasterView from "./src/views/fasterMode/ScoreFaster/ScoreFasterView";
 
 const Stack = createStackNavigator();
 
@@ -22,22 +25,37 @@ const App = () => {
                 <Stack.Screen
                     name="Mode"
                     component={ModeView}
-                    options={{title: 'Elige el modo de juego', headerTitleStyle: { alignSelf: 'center' }}}
+                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
                 />
                 <Stack.Screen
                     name="LegendMode"
                     component={LegendModeView}
-                    options={{title: 'Modo Leyenda', headerTitleStyle: { alignSelf: 'center' }}}
+                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
                 />
                 <Stack.Screen
                     name="ClassicMode"
                     component={ClassicModeView}
-                    options={{title: 'Modo Clásico', headerTitleStyle: { alignSelf: 'center' }}}
+                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
                 />
                 <Stack.Screen
                     name="FasterMode"
                     component={FasterModeView}
-                    options={{title: 'Modo Rápido', headerTitleStyle: { alignSelf: 'center' }}}
+                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
+                />
+                <Stack.Screen
+                    name="Scores"
+                    component={ScoresView}
+                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
+                />
+                <Stack.Screen
+                    name="ScoreLegend"
+                    component={ScoreLegendView}
+                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
+                />
+                <Stack.Screen
+                    name="ScoreFaster"
+                    component={ScoreFasterView}
+                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
                 />
             </Stack.Navigator>
             <StatusBar hidden={true} />
