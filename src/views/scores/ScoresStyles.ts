@@ -11,10 +11,11 @@ export const ScoresStyles = StyleSheet.create({
         flex: 1
     },
     cardContent: {
-        backgroundColor: '#C9C9C9',
+        borderWidth: 2,
         borderRadius: 10,
         padding: 25,
         display: 'flex',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        width: 350
     }
 });

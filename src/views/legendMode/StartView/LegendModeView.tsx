@@ -37,6 +37,7 @@ const LegendModeView = ({ navigation }) => {
                     <Button
                         title="Jugar"
                         titleStyle={{fontSize: 25, padding: 40}}
+                        onPress={() => navigation.navigate('GameLegend')}
                     />
                 </View>
             </View>
