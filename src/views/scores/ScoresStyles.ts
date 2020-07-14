@@ -1,6 +1,6 @@
 import {StyleSheet} from "react-native";
 
-export const ModeStyles = StyleSheet.create({
+export const ScoresStyles = StyleSheet.create({
     ModeContainer: {
         height: '100%',
         width: '100%'

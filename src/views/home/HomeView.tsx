@@ -30,14 +30,14 @@ const HomeView = ({ navigation }) => {
                             </View>
                             <View style={{flexDirection: 'column', display: 'flex'}}>
                                 <Text style={{fontSize: 50, paddingLeft: 50}}>
-                                    Play
+                                    Jugar
                                 </Text>
                             </View>
                         </View>
                     </TouchableOpacity>
                 </View>
                 <View style={{paddingTop: 30}}>
-                    <TouchableOpacity onPress={() => null}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Scores')}>
                         <View style={HomeStyles.cardContent}>
                             <View style={{flexDirection: 'column', display: 'flex'}}>
                                 <Image source={require('../../images/medalla.png')} style={{height: 60, width: 60}} height={60} width={60} />
