@@ -4,6 +4,7 @@ import {Avatar} from "react-native-elements";
 
 import {MenuStyles} from '../../styles/homeStyles/MenuStyles';
 import {useState} from "react";
+import IMenuLabels from '../../labels/MenuLabels';
 
 interface IMenuProps {
     changeModalVisible: (isVisibleModal: boolean) => void;
@@ -39,7 +40,7 @@ const MenuView = (props: IMenuProps) => {
                         <View style={MenuStyles.menuContent}>
                             <View style={MenuStyles.selectContent}>
                                 <Text style={MenuStyles.labelStyle}>
-                                    Idioma
+                                    {IMenuLabels.CONF_LANGUAJE}
                                 </Text>
                                 <Picker
                                     selectedValue={selectedValueLanguage}
@@ -52,7 +53,7 @@ const MenuView = (props: IMenuProps) => {
                             </View>
                             <View style={MenuStyles.selectContent}>
                                 <Text style={MenuStyles.labelStyle}>
-                                    Tema
+                                    {IMenuLabels.CONF_THEM}
                                 </Text>
                                 <Picker
                                     selectedValue={selectedValueTheme}
@@ -65,7 +66,7 @@ const MenuView = (props: IMenuProps) => {
                             </View>
                             <View style={MenuStyles.selectContent}>
                                 <Text style={MenuStyles.labelStyle}>
-                                    Sonido
+                                    {IMenuLabels.CONF_SOUND}
                                 </Text>
                                 <Switch
                                     trackColor={{ false: "#767577", true: "#81b0ff" }}
@@ -76,7 +77,7 @@ const MenuView = (props: IMenuProps) => {
                             </View>
                             <View style={MenuStyles.selectContent}>
                                 <Text style={MenuStyles.labelStyle}>
-                                    Vibración
+                                    {IMenuLabels.CONF_VIBRATOR}
                                 </Text>
                                 <Switch
                                     trackColor={{ false: "#767577", true: "#81b0ff" }}
@@ -89,8 +90,12 @@ const MenuView = (props: IMenuProps) => {
                     </View>
                     <View style={MenuStyles.footerContent}>
                         <Button title="Sign out" onPress={() => null} />
-                        <Text>Kevin Espinosa</Text>
-                        <Text>JonathanMorillo</Text>
+                        <Text>
+                            {IMenuLabels.CONF_AUTHOR1}
+                        </Text>
+                        <Text>
+                            {IMenuLabels.CONF_AUTHOR2}
+                        </Text>
                         <Text>2020</Text>
                     </View>
                 </View>
