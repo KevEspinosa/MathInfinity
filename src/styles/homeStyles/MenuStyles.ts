@@ -32,8 +32,17 @@ export const MenuStyles = StyleSheet.create({
         alignItems: 'center',
         paddingTop: 40
     },
+    avatarTitle:{
+        color: '#000', 
+        backgroundColor: '#CACACA', 
+        padding: 29
+    },
     menuContent: {
         paddingTop: 40
+    },
+    pickeds:{
+        height: 50, 
+        width: '100%'
     },
     selectContent: {
         paddingTop: 20

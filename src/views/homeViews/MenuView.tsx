@@ -32,7 +32,7 @@ const MenuView = (props: IMenuProps) => {
                                 size="large"
                                 rounded={true}
                                 title="N"
-                                titleStyle={{color: '#000', backgroundColor: '#CACACA', padding: 29}}
+                                titleStyle={MenuStyles.avatarTitle}
                                 showAccessory={true}
                             />
                         </View>
@@ -43,7 +43,7 @@ const MenuView = (props: IMenuProps) => {
                                 </Text>
                                 <Picker
                                     selectedValue={selectedValueLanguage}
-                                    style={{ height: 50, width: '100%' }}
+                                    style={MenuStyles.pickeds}
                                     onValueChange={(itemValue) => setSelectedValueLanguage(itemValue)}
                                 >
                                     <Picker.Item label="Español" value="spanish" />
@@ -56,7 +56,7 @@ const MenuView = (props: IMenuProps) => {
                                 </Text>
                                 <Picker
                                     selectedValue={selectedValueTheme}
-                                    style={{ height: 50, width: '100%' }}
+                                    style={MenuStyles.pickeds}
                                     onValueChange={(itemValue) => setSelectedValueTheme(itemValue)}
                                 >
                                     <Picker.Item label="Light" value="light" />
