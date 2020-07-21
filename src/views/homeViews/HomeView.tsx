@@ -16,14 +16,14 @@ const HomeView = ({navigation}: {navigation: any}) => {
                 placement="center"
                 containerStyle={HomeStyles.containerHome}
                 leftComponent={{ icon: 'menu', color: '#fff', onPress: () => setModalVisible(true), size: 30 }}
-                centerComponent={{ text: 'MathInfinity', style: { color: '#fff', alignItems: 'center', fontSize: 25 } }}
+                centerComponent={{ text: 'MathInfinity', style:HomeStyles.centerContainer}}
             />
             <View style={HomeStyles.content}>
                 <View style={{paddingBottom: 30}}>
                     <TouchableOpacity onPress={() => navigation.navigate('Mode')}>
                         <View style={HomeStyles.cardContent}>
                             <View style={HomeStyles.cardContentimage}>
-                                <Image source={require('../../images/espadas.png')} style={{height: 60, width: 60}} height={60} width={60} />
+                                <Image source={require('../../images/espadas.png')} style={HomeStyles.cardImage} height={60} width={60} />
                             </View>
                             <View style={HomeStyles.cardContentimage}>
                                 <Text style={HomeStyles.cardContentext}>
@@ -37,7 +37,7 @@ const HomeView = ({navigation}: {navigation: any}) => {
                     <TouchableOpacity onPress={() => navigation.navigate('Scores')}>
                         <View style={HomeStyles.cardContent}>
                             <View style={HomeStyles.cardContentimage}>
-                                <Image source={require('../../images/medalla.png')} style={{height: 60, width: 60}} height={60} width={60} />
+                                <Image source={require('../../images/medalla.png')} style={HomeStyles.cardImage} height={60} width={60} />
                             </View>
                             <View style={HomeStyles.cardContentimage}>
                                 <Text style={HomeStyles.cardContentext}>

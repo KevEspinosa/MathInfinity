@@ -30,5 +30,14 @@ export const HomeStyles = StyleSheet.create({
     cardContentext:{
         fontSize: 50, 
         paddingLeft: 50
+    },
+    centerContainer:{
+        color: '#fff', 
+        alignItems: 'center', 
+        fontSize: 25
+    },
+    cardImage:{
+        height: 60, 
+        width: 60
     }
 });
