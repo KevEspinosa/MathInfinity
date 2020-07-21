@@ -14,7 +14,7 @@ const HomeView = ({navigation}: {navigation: any}) => {
         <View style={HomeStyles.HomeContainer}>
             <Header
                 placement="center"
-                containerStyle={{marginTop: -20, width: '100%', height: 100}}
+                containerStyle={HomeStyles.containerHome}
                 leftComponent={{ icon: 'menu', color: '#fff', onPress: () => setModalVisible(true), size: 30 }}
                 centerComponent={{ text: 'MathInfinity', style: { color: '#fff', alignItems: 'center', fontSize: 25 } }}
             />
@@ -22,11 +22,11 @@ const HomeView = ({navigation}: {navigation: any}) => {
                 <View style={{paddingBottom: 30}}>
                     <TouchableOpacity onPress={() => navigation.navigate('Mode')}>
                         <View style={HomeStyles.cardContent}>
-                            <View style={{flexDirection: 'column', display: 'flex'}}>
+                            <View style={HomeStyles.cardContentimage}>
                                 <Image source={require('../../images/espadas.png')} style={{height: 60, width: 60}} height={60} width={60} />
                             </View>
-                            <View style={{flexDirection: 'column', display: 'flex'}}>
-                                <Text style={{fontSize: 50, paddingLeft: 50}}>
+                            <View style={HomeStyles.cardContentimage}>
+                                <Text style={HomeStyles.cardContentext}>
                                     {HomeLabels.GAME_TEXT}
                                 </Text>
                             </View>
@@ -36,11 +36,11 @@ const HomeView = ({navigation}: {navigation: any}) => {
                 <View style={{paddingTop: 30}}>
                     <TouchableOpacity onPress={() => navigation.navigate('Scores')}>
                         <View style={HomeStyles.cardContent}>
-                            <View style={{flexDirection: 'column', display: 'flex'}}>
+                            <View style={HomeStyles.cardContentimage}>
                                 <Image source={require('../../images/medalla.png')} style={{height: 60, width: 60}} height={60} width={60} />
                             </View>
-                            <View style={{flexDirection: 'column', display: 'flex'}}>
-                                <Text style={{fontSize: 50, paddingLeft: 50}}>
+                            <View style={HomeStyles.cardContentimage}>
+                                <Text style={HomeStyles.cardContentext}>
                                     {HomeLabels.SCORE_TEXT}
                                 </Text>
                             </View>

@@ -5,6 +5,11 @@ export const HomeStyles = StyleSheet.create({
         height: '100%',
         width: '100%'
     },
+    containerHome:{
+        marginTop: -20, 
+        width: '100%', 
+        height: 100
+    },
     content: {
         alignItems: 'center',
         justifyContent: 'center',
@@ -18,4 +23,12 @@ export const HomeStyles = StyleSheet.create({
         flexDirection: 'row',
         width: 350
     },
+    cardContentimage:{
+        flexDirection: 'column', 
+        display: 'flex'
+    },
+    cardContentext:{
+        fontSize: 50, 
+        paddingLeft: 50
+    }
 });
