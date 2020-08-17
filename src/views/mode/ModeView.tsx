@@ -4,7 +4,7 @@ import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {ModeStyles} from './ModeStyles';
 import {Header} from "react-native-elements";
 
-const ModeView = ({ navigation }) => {
+const ModeView = ({navigation}: any) => {
     return (
         <View style={ModeStyles.ModeContainer}>
             <Header

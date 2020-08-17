@@ -4,7 +4,7 @@ import {Avatar, Button, Header} from 'react-native-elements';
 
 import {LegendModeStyle} from './LegendModeStyles';
 
-const LegendModeView = ({ navigation }) => {
+const LegendModeView = ({navigation}: any) => {
     return (
         <View style={LegendModeStyle.ModeContainer}>
             <Header

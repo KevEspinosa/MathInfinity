@@ -1,10 +1,29 @@
 import * as React from 'react';
-import {Image, Text, View} from 'react-native';
+import {Image, ScrollView, Text, View} from 'react-native';
 
 import {ScoreFasterStyles} from './ScoreFasterStyles';
 import {Header} from "react-native-elements";
+import {ScoreLegendStyles} from "../../legendMode/ScoreLegend/ScoreLegendStyle";
 
-const ScoreFasterView = ({ navigation }) => {
+interface IScoreData {
+    name: string;
+    score: number
+}
+
+const ScoreFasterView = ({navigation}: any) => {
+    const [scoreFasterData, setScoreFasterData] = React.useState([]);
+
+    React.useEffect(() => {
+        fetch('http://192.168.100.8:3000/scoreFaster')
+            .then((response) => response.json())
+            .then((json) => {
+                setScoreFasterData(json);
+            })
+            .catch((error) => {
+                console.error('error', error);
+                throw error;
+            });
+    }, [])
     return (
         <View style={ScoreFasterStyles.ModeContainer}>
             <Header
@@ -17,57 +36,40 @@ const ScoreFasterView = ({ navigation }) => {
                 <Image source={require('../../../images/reloj.png')} style={{height: 120, width: 120}} height={60} width={60} />
             </View>
             <View style={ScoreFasterStyles.content}>
-                <View style={{paddingBottom: 15}}>
-                    <View style={ScoreFasterStyles.cardContent}>
-                        <View style={{flexDirection: 'column', display: 'flex', flex: 0.2}}>
-                            <Image source={require('../../../images/primero.png')} style={{height: 60, width: 60}} height={60} width={60} />
-                        </View>
-                        <View style={{flexDirection: 'column', display: 'flex', flex: 1}}>
-                            <Text style={{fontSize: 30, paddingLeft: 50}}>
-                                56
-                            </Text>
-                        </View>
-                        <View style={{flexDirection: 'column', display: 'flex'}}>
-                            <Text style={{fontSize: 30, paddingLeft: 50}}>
-                                Nicolás
-                            </Text>
-                        </View>
-                    </View>
-                </View>
-                <View style={{paddingTop: 15, paddingBottom: 15}}>
-                    <View style={ScoreFasterStyles.cardContent}>
-                        <View style={{flexDirection: 'column', display: 'flex', flex: 0.2}}>
-                            <Image source={require('../../../images/segundo.png')} style={{height: 60, width: 60}} height={60} width={60} />
-                        </View>
-                        <View style={{flexDirection: 'column', display: 'flex', flex: 1}}>
-                            <Text style={{fontSize: 30, paddingLeft: 50}}>
-                                45
-                            </Text>
-                        </View>
-                        <View style={{flexDirection: 'column', display: 'flex'}}>
-                            <Text style={{fontSize: 30, paddingLeft: 50}}>
-                                Jonathan
-                            </Text>
-                        </View>
-                    </View>
-                </View>
-                <View style={{paddingTop: 15}}>
-                    <View style={ScoreFasterStyles.cardContent}>
-                        <View style={{flexDirection: 'column', display: 'flex', flex: 0.2}}>
-                            <Image source={require('../../../images/tercer-lugar.png')} style={{height: 60, width: 60}} height={60} width={60} />
-                        </View>
-                        <View style={{flexDirection: 'column', display: 'flex', flex: 1}}>
-                            <Text style={{fontSize: 30, paddingLeft: 50}}>
-                                44
-                            </Text>
-                        </View>
-                        <View style={{flexDirection: 'column', display: 'flex'}}>
-                            <Text style={{fontSize: 30, paddingLeft: 50}}>
-                                Kevin
-                            </Text>
-                        </View>
-                    </View>
-                </View>
+                <ScrollView>
+                    {scoreFasterData.sort((a: IScoreData, b: IScoreData) => b.score - a.score).map((score: IScoreData, index) => {
+                        return (
+                            <View style={{paddingBottom: 15}} key={index}>
+                                <View style={ScoreLegendStyles.cardContent}>
+                                    <View style={{flexDirection: 'column', display: 'flex', flex: 0.2}}>
+                                        {index === 0 && (
+                                            <Image source={require('../../../images/primero.png')} style={{height: 60, width: 60}} height={60} width={60} />
+                                        )}
+                                        {index === 1 && (
+                                            <Image source={require('../../../images/segundo.png')} style={{height: 60, width: 60}} height={60} width={60} />
+                                        )}
+                                        {index === 2 && (
+                                            <Image source={require('../../../images/tercer-lugar.png')} style={{height: 60, width: 60}} height={60} width={60} />
+                                        )}
+                                        {index > 2 && (
+                                            <Image source={require('../../../images/medallaDefault.png')} style={{height: 60, width: 60}} height={60} width={60} />
+                                        )}
+                                    </View>
+                                    <View style={{flexDirection: 'column', display: 'flex', flex: 1}}>
+                                        <Text style={{fontSize: 30, paddingLeft: 50}}>
+                                            {score.score}
+                                        </Text>
+                                    </View>
+                                    <View style={{flexDirection: 'column', display: 'flex'}}>
+                                        <Text style={{fontSize: 30, paddingLeft: 50}}>
+                                            {score.name}
+                                        </Text>
+                                    </View>
+                                </View>
+                            </View>
+                        )
+                    })}
+                </ScrollView>
             </View>
         </View>
     );
