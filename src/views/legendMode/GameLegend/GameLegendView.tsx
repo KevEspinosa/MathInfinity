@@ -20,7 +20,7 @@ const GameLegendView = ({navigation}: any) => {
 
     const [name, changeName] = React.useState('');
 
-    const [timeSeconds, changeTimeSeconds] = React.useState<number>(5);
+    const [timeSeconds, changeTimeSeconds] = React.useState<number>(300);
     const [colorTimer, changeColorTimer] = React.useState<string>('#6CDE1D');
 
     const timer = () => {
