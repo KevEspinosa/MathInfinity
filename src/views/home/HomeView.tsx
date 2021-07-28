@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {Image, Picker, Switch, Text, TouchableOpacity, View} from 'react-native';
-import {Avatar, Header, Icon} from 'react-native-elements';
+import { Image, Picker, Switch, Text, TouchableOpacity, View } from 'react-native';
+import { Avatar, Header, Icon } from 'react-native-elements';
 
-import {HomeStyles} from './HomeStyles';
-import {useState} from "react";
+import { HomeStyles } from './HomeStyles';
+import { useState } from "react";
 
 const HomeView = ({ navigation }) => {
     const [modalVisible, setModalVisible] = useState(false);
@@ -17,34 +17,61 @@ const HomeView = ({ navigation }) => {
         <View style={HomeStyles.HomeContainer}>
             <Header
                 placement="center"
-                containerStyle={{marginTop: -20, width: '100%', height: 100}}
+                containerStyle={{ marginTop: -20, width: '100%', height: 100 }}
                 leftComponent={{ icon: 'menu', color: '#fff', onPress: () => setModalVisible(true), size: 30 }}
-                centerComponent={{ text: 'MathInfinity', style: { color: '#fff', alignItems: 'center', fontSize: 25 } }}
             />
             <View style={HomeStyles.content}>
-                <View style={{paddingBottom: 30}}>
-                    <TouchableOpacity onPress={() => navigation.navigate('Mode')}>
+                <View style={{ paddingBottom: 40 }}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Novato')}>
                         <View style={HomeStyles.cardContent}>
-                            <View style={{flexDirection: 'column', display: 'flex'}}>
-                                <Image source={require('../../images/espadas.png')} style={{height: 60, width: 60}} height={60} width={60} />
+                            <View style={{ flexDirection: 'column', display: 'flex' }}>
+                                <Image source={require('../../images/espadas.png')} style={{ height: 50, width: 50 }} height={60} width={60} />
                             </View>
-                            <View style={{flexDirection: 'column', display: 'flex'}}>
-                                <Text style={{fontSize: 50, paddingLeft: 50}}>
-                                    Jugar
+                            <View style={{ flexDirection: 'column', display: 'flex' }}>
+                                <Text style={{ fontSize: 30, paddingLeft: 50 }}>
+                                    Novato
                                 </Text>
                             </View>
                         </View>
                     </TouchableOpacity>
                 </View>
-                <View style={{paddingTop: 30}}>
-                    <TouchableOpacity onPress={() => navigation.navigate('Scores')}>
+                <View style={{ paddingBottom: 40 }}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Veterano')}>
                         <View style={HomeStyles.cardContent}>
-                            <View style={{flexDirection: 'column', display: 'flex'}}>
-                                <Image source={require('../../images/medalla.png')} style={{height: 60, width: 60}} height={60} width={60} />
+                            <View style={{ flexDirection: 'column', display: 'flex' }}>
+                                <Image source={require('../../images/espadas.png')} style={{ height: 60, width: 60 }} height={60} width={60} />
                             </View>
-                            <View style={{flexDirection: 'column', display: 'flex'}}>
-                                <Text style={{fontSize: 50, paddingLeft: 50}}>
-                                    Puntaje
+                            <View style={{ flexDirection: 'column', display: 'flex' }}>
+                                <Text style={{ fontSize: 30, paddingLeft: 50 }}>
+                                    Veterano
+                                </Text>
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View style={{ paddingBottom: 40 }}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Maestro')}>
+                        <View style={HomeStyles.cardContent}>
+                            <View style={{ flexDirection: 'column', display: 'flex' }}>
+                                <Image source={require('../../images/espadas.png')} style={{ height: 60, width: 60 }} height={60} width={60} />
+                            </View>
+                            <View style={{ flexDirection: 'column', display: 'flex' }}>
+                                <Text style={{ fontSize: 30, paddingLeft: 50 }}>
+                                    Maestro
+                                </Text>
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View style={{ paddingBottom: 40 }}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Leyenda')}>
+                        <View style={HomeStyles.cardContent}>
+                            <View style={{ flexDirection: 'column', display: 'flex' }}>
+                                <Image source={require('../../images/espadas.png')} style={{ height: 60, width: 60 }} height={60} width={60} />
+                            </View>
+                            <View style={{ flexDirection: 'column', display: 'flex' }}>
+                                <Text style={{ fontSize: 30, paddingLeft: 50 }}>
+                                    Leyenda
                                 </Text>
                             </View>
                         </View>
@@ -53,9 +80,17 @@ const HomeView = ({ navigation }) => {
             </View>
             {modalVisible && (
                 <View style={HomeStyles.modalContent}>
+
+                    <TouchableOpacity onPress={() => setModalVisible(true)}>
+                        <View style={HomeStyles.close}>
+                            <Text>X</Text>
+                        </View>
+                    </TouchableOpacity>
+
                     <TouchableOpacity onPress={() => setModalVisible(false)}>
                         <View style={HomeStyles.modalBackground} />
                     </TouchableOpacity>
+
                     <View style={HomeStyles.modalContainer}>
                         <View style={HomeStyles.menuContainer}>
                             <View>
@@ -64,37 +99,19 @@ const HomeView = ({ navigation }) => {
                                         size="large"
                                         rounded={true}
                                         title="N"
-                                        titleStyle={{color: '#000', backgroundColor: '#CACACA', padding: 29}}
+                                        titleStyle={{ color: '#000', backgroundColor: '#CACACA', padding: 29 }}
                                         showAccessory={true}
                                     />
                                 </View>
                                 <View style={HomeStyles.menuContent}>
-                                    <View style={HomeStyles.selectContent}>
-                                        <Text style={HomeStyles.labelStyle}>
-                                            Idioma
-                                        </Text>
-                                        <Picker
-                                            selectedValue={selectedValueLanguage}
-                                            style={{ height: 50, width: '100%' }}
-                                            onValueChange={(itemValue) => setSelectedValueLanguage(itemValue)}
-                                        >
-                                            <Picker.Item label="Español" value="spanish" />
-                                            <Picker.Item label="Inglés" value="english" />
-                                        </Picker>
-                                    </View>
-                                    <View style={HomeStyles.selectContent}>
-                                        <Text style={HomeStyles.labelStyle}>
-                                            Tema
-                                        </Text>
-                                        <Picker
-                                            selectedValue={selectedValueTheme}
-                                            style={{ height: 50, width: '100%' }}
-                                            onValueChange={(itemValue) => setSelectedValueTheme(itemValue)}
-                                        >
-                                            <Picker.Item label="Light" value="light" />
-                                            <Picker.Item label="Dark" value="dark" />
-                                        </Picker>
-                                    </View>
+                                    <TouchableOpacity onPress={() => navigation.navigate('Cerrar sesion')}>
+                                        <View>
+                                            <Text >
+                                                Editar Perfil
+                                            </Text>
+                                        </View>
+                                    </TouchableOpacity>
+
                                     <View style={HomeStyles.selectContent}>
                                         <Text style={HomeStyles.labelStyle}>
                                             Sonido
@@ -117,12 +134,27 @@ const HomeView = ({ navigation }) => {
                                             value={isEnabledVibration}
                                         />
                                     </View>
+
+                                    <TouchableOpacity onPress={() => navigation.navigate('Puntuaciones')}>
+                                        <View>
+                                            <Text >
+                                                Puntuaciones
+                                            </Text>
+                                        </View>
+                                    </TouchableOpacity>
                                 </View>
                             </View>
                             <View style={HomeStyles.footerContent}>
-                                <Text>Kevin Espinosa</Text>
-                                <Text>JonathanMorillo</Text>
-                                <Text>2020</Text>
+                                <TouchableOpacity onPress={() => navigation.navigate('Cerrar sesion')}>
+                                    <View>
+
+
+                                        <Text >
+                                            Cerrar Sesion
+                                        </Text>
+
+                                    </View>
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </View>

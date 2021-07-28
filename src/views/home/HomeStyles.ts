@@ -11,8 +11,8 @@ export const HomeStyles = StyleSheet.create({
         flex: 1
     },
     cardContent: {
-        borderWidth: 2,
-        borderRadius: 10,
+        borderWidth: 0.4,
+        borderRadius: 20,
         padding: 25,
         display: 'flex',
         flexDirection: 'row',
@@ -61,5 +61,12 @@ export const HomeStyles = StyleSheet.create({
     footerContent: {
         alignItems: 'center',
         paddingBottom: 10
+    },
+    close: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        textAlign:'right',
+        padding: 1,
+        width: 'fit-content',
     }
 });

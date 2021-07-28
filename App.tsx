@@ -25,56 +25,6 @@ const App = () => {
                     component={HomeView}
                     options={{headerShown: false}}
                 />
-                <Stack.Screen
-                    name="Mode"
-                    component={ModeView}
-                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
-                />
-                <Stack.Screen
-                    name="LegendMode"
-                    component={LegendModeView}
-                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
-                />
-                <Stack.Screen
-                    name="ScoreLegend"
-                    component={ScoreLegendView}
-                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
-                />
-                <Stack.Screen
-                    name="GameLegend"
-                    component={GameLegendView}
-                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
-                />
-                <Stack.Screen
-                    name="ClassicMode"
-                    component={ClassicModeView}
-                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
-                />
-                <Stack.Screen
-                    name="GameClassic"
-                    component={GameClassicView}
-                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
-                />
-                <Stack.Screen
-                    name="FasterMode"
-                    component={FasterModeView}
-                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
-                />
-                <Stack.Screen
-                    name="ScoreFaster"
-                    component={ScoreFasterView}
-                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
-                />
-                <Stack.Screen
-                    name="GameFaster"
-                    component={GameFasterView}
-                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
-                />
-                <Stack.Screen
-                    name="Scores"
-                    component={ScoresView}
-                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
-                />
             </Stack.Navigator>
             <StatusBar hidden={true} />
         </NavigationContainer>
