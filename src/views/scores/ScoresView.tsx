@@ -4,7 +4,7 @@ import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {ScoresStyles} from './ScoresStyles';
 import {Header} from "react-native-elements";
 
-const ScoresView = ({ navigation }) => {
+const ScoresView = ({ navigation }:any) => {
     return (
         <View style={ScoresStyles.ModeContainer}>
             <Header
