@@ -1,18 +1,11 @@
 import * as React from 'react';
-import {StatusBar} from 'react-native';
+import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
 import HomeView from './src/views/home/HomeView';
-import ModeView from "./src/views/mode/ModeView";
-import LegendModeView from "./src/views/legendMode/StartView/LegendModeView";
-import ClassicModeView from "./src/views/clasicMode/StartView/ClassicModeView";
-import FasterModeView from "./src/views/fasterMode/StartView/FasterModeView";
 import ScoresView from "./src/views/scores/ScoresView";
-import ScoreLegendView from "./src/views/legendMode/ScoreLegend/ScoreLegendView";
-import ScoreFasterView from "./src/views/fasterMode/ScoreFaster/ScoreFasterView";
-import GameLegendView from "./src/views/legendMode/GameLegend/GameLegendView";
-import GameClassicView from "./src/views/clasicMode/GameClassic/GameClassicView";
-import GameFasterView from "./src/views/fasterMode/GameFaster/GameFasterView";
+import HelpView from './src/views/help/HelpView';
 
 const Stack = createStackNavigator();
 
@@ -23,7 +16,17 @@ const App = () => {
                 <Stack.Screen
                     name="Home"
                     component={HomeView}
-                    options={{headerShown: false}}
+                    options={{ headerShown: false }}
+                />
+                 <Stack.Screen
+                    name="Help"
+                    component={HelpView}
+                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
+                />
+                 <Stack.Screen
+                    name="Score"
+                    component={ScoresView}
+                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
                 />
             </Stack.Navigator>
             <StatusBar hidden={true} />

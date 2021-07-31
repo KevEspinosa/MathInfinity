@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
-export const HomeStyles = StyleSheet.create({
-    HomeContainer: {
+export const HelpStyles = StyleSheet.create({
+    HelpContainer: {
         height: '100%',
         width: '100%'
     },
@@ -13,7 +13,6 @@ export const HomeStyles = StyleSheet.create({
     header: {
         height: 80,
         paddingTop: 30,
-        backgroundColor: 'coral',
         flexDirection: 'row',
         justifyContent: 'center',
     },
