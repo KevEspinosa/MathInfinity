@@ -34,7 +34,7 @@ export const HelpStyles = StyleSheet.create({
         padding: 16,
         borderRadius: 60,
         textAlign: 'center',
-        shadowColor: '#75255D',
+        shadowColor: '#424949',
         shadowRadius: 10
     },
     modalContent: {
