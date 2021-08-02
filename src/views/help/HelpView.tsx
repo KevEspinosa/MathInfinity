@@ -1,26 +1,30 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, TouchableOpacity, Image } from 'react-native';
 import { Avatar, Button, Header } from 'react-native-elements';
+import { IMAGES } from '../../images';
 
 import { HelpStyles } from '../help/HelpStyles';
 
 const ClassicModeView = ({ navigation }: any) => {
     return (
         <View style={HelpStyles.HelpContainer}>
-            <Header
-                placement="center"
-                containerStyle={{ marginTop: -20, width: '100%', height: 100, backgroundColor: '#424949' }}
-                leftComponent={{ icon: 'arrow-back', color: '#fff', onPress: () => navigation.navigate('Home'), size: 30 }}
-                centerComponent={{ text: 'Ayuda', style: { color: '#fff', alignItems: 'center', fontSize: 20, fontWeight: 'bold', letterSpacing: 5 } }}
-            />
+            <TouchableOpacity
+                style={HelpStyles.headerContainer}
+                onPress={() => navigation.navigate('Home')}>
+                <Image source={require('../../images/icons/arrow.png')} style={HelpStyles.menuIcon} />
+                <Text style={HelpStyles.headerTitle}>Ayuda</Text>
+            </TouchableOpacity>
             <View style={HelpStyles.content}>
-                <View style={HelpStyles.Mod}>
+                <View style={HelpStyles.firstMod}>
                     <View style={{ flexDirection: 'column', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <Avatar
-                            size="xlarge"
-                            rounded
-                            source={require('../../images/espada.png')} 
-                        />
+                        <TouchableOpacity>
+                            <View style={HelpStyles.avatarContainer}>
+                                <Image
+                                    source={require('../../images/icons/espada.png')}
+                                    style={HelpStyles.avatarImage}
+                                />
+                            </View>
+                        </TouchableOpacity>
                         <Text style={{ fontFamily: 'cursive', fontStyle: 'italic', fontSize: 17 }}>
                             Novato
                         </Text>
@@ -29,7 +33,6 @@ const ClassicModeView = ({ navigation }: any) => {
                         <Text>
                             Ejercicios de Operaciones con numeros reales
                         </Text>
-
                         <Text>
                             Comienzas con 6 minutos
                         </Text>
@@ -43,11 +46,14 @@ const ClassicModeView = ({ navigation }: any) => {
                 </View>
                 <View style={HelpStyles.Mod}>
                     <View style={{ flexDirection: 'column', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <Avatar
-                            size="xlarge"
-                            rounded
-                            source={require('../../images/guerra.png')}
-                        />
+                        <TouchableOpacity>
+                            <View style={HelpStyles.avatarContainer}>
+                                <Image
+                                    source={require('../../images/icons/guerra.png')}
+                                    style={HelpStyles.avatarImage}
+                                />
+                            </View>
+                        </TouchableOpacity>
                         <Text style={{ fontFamily: 'cursive', fontStyle: 'italic', fontSize: 17 }}>
                             Veterano
                         </Text>
@@ -70,11 +76,14 @@ const ClassicModeView = ({ navigation }: any) => {
                 </View>
                 <View style={HelpStyles.Mod}>
                     <View style={{ flexDirection: 'column', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <Avatar
-                            size="xlarge"
-                            rounded
-                            source={require('../../images/pirata.png')}
-                        />
+                        <TouchableOpacity>
+                            <View style={HelpStyles.avatarContainer}>
+                                <Image
+                                    source={require('../../images/icons/pirata.png')}
+                                    style={HelpStyles.avatarImage}
+                                />
+                            </View>
+                        </TouchableOpacity>
                         <Text style={{ fontFamily: 'cursive', fontStyle: 'italic', fontSize: 17 }}>
                             Maestro
                         </Text>
@@ -97,11 +106,14 @@ const ClassicModeView = ({ navigation }: any) => {
                 </View>
                 <View style={HelpStyles.Mod}>
                     <View style={{ flexDirection: 'column', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <Avatar
-                            size="xlarge"
-                            rounded
-                            source={require('../../images/fantasia.png')}
-                        />
+                        <TouchableOpacity>
+                            <View style={HelpStyles.avatarContainer}>
+                                <Image
+                                    source={require('../../images/icons/fantasia.png')}
+                                    style={HelpStyles.avatarImage}
+                                />
+                            </View>
+                        </TouchableOpacity>
                         <Text style={{ fontFamily: 'cursive', fontStyle: 'italic', fontSize: 17 }}>
                             Leyenda
                         </Text>

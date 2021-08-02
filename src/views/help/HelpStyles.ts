@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { Colors } from '../../constants/resources';
 
 export const HelpStyles = StyleSheet.create({
     HelpContainer: {
@@ -37,6 +38,14 @@ export const HelpStyles = StyleSheet.create({
         shadowColor: '#424949',
         shadowRadius: 10
     },
+     firstMod:{
+        marginTop: 10,
+        padding: 16,
+        borderRadius: 60,
+        textAlign: 'center',
+        shadowColor: '#424949',
+        shadowRadius: 10
+    },
     modalContent: {
         height: '100%',
         width: '100%',
@@ -62,12 +71,6 @@ export const HelpStyles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         alignItems: 'center',
-    },
-    avatarContainer: {
-        paddingTop: 40,
-        paddingBottom: 50,
-        alignItems: 'center',
-        flexDirection: 'column',
     },
     menuContent: {
         paddingTop: 50
@@ -95,6 +98,44 @@ export const HelpStyles = StyleSheet.create({
         paddingTop: 12,
         backgroundColor: '#E52B2B',
         height: 50
+    },
+    headerContainer: {
+        width: '100%',
+        height: 50,
+        backgroundColor: Colors.PRIMARY.BASE,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+        position: 'relative',
+    },
+    menuIcon: {
+        width: 20,
+        height: 20,
+        tintColor: Colors.WHITE.BASE,
+        position: 'absolute',
+        top: 15,
+        left: 30,
+    },
+    headerTitle: {
+        color: Colors.WHITE.BASE,
+        fontSize: 20,
+        fontWeight: 'bold',
+        letterSpacing: 5,
+    },
+    avatarContainer: {
+        alignItems: 'center',
+        flexDirection: 'column',
+    },
+    avatarImage: {
+        width: 70,
+        height: 70,
+        borderRadius: 50,
+    },
+    avatarText: {
+        paddingTop: 4,
+        fontSize: 18,
+        fontWeight: 'bold',
     },
 });
 

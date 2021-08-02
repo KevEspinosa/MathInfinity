@@ -6,6 +6,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeView from './src/views/home/HomeView';
 import ScoresView from "./src/views/scores/ScoresView";
 import HelpView from './src/views/help/HelpView';
+import GameNovatoView from './src/views/game/novato/GameNovatoView';
+import GameVeteranoView from './src/views/game/veterano/GameVeteranoView';
+import GameMaestroView from './src/views/game/maestro/GameMaestroView';
+import GameLegendarioView from './src/views/game/legendario/GameLegendarioView';
+import UserView from './src/views/user/UserView';
 
 const Stack = createStackNavigator();
 
@@ -26,6 +31,31 @@ const App = () => {
                  <Stack.Screen
                     name="Score"
                     component={ScoresView}
+                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
+                />
+                 <Stack.Screen
+                    name="User"
+                    component={UserView}
+                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
+                />
+                <Stack.Screen
+                    name="GameNovato"
+                    component={GameNovatoView}
+                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
+                />
+                <Stack.Screen
+                    name="GameVeterano"
+                    component={GameVeteranoView}
+                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
+                />
+                 <Stack.Screen
+                    name="GameMaestro"
+                    component={GameMaestroView}
+                    options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
+                />
+                <Stack.Screen
+                    name="GameLeyenda"
+                    component={GameLegendarioView}
                     options={{headerTitleStyle: { alignSelf: 'center' }, headerShown: false}}
                 />
             </Stack.Navigator>
